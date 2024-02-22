@@ -19,7 +19,7 @@ function encriptar(){
     //verifica si el contenido de texto esta vacio
     if(textoOriginal.length != 0){
         if((contieneMayusculas) || (contieneEspeciales)){
-            console.log("verifica si contiene mayusculas o caracteres especiales");
+            //console.log("verifica si contiene mayusculas o caracteres especiales");
             alerta("Ooops!", "Solo se permiten minúsculas y sin caracteres especiales.");
         }else{
                 //remplazar las vocales por los valores
