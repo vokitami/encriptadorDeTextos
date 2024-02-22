@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+} 
+.contenedor{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(57, 57, 57);
+}
+.texto{
+    position:absolute;
+    width: 42%; height: 60%;
+    left: 12%;
+    top: 10%;
+    border: none;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    background-color: rgb(57, 57, 57);
+    color: rgb(194, 188, 188);
+    padding: 20px;
+    resize: none;
+}
+.texto::-webkit-scrollbar{ /*ocultar el scrollbar pero seguir teniendo el desplasamiento*/
+    display: none;
+}
+.texto::placeholder{
+    color: rgb(128, 128, 128);
+}
+.texto:focus,
+.texto:active{
+    border: none;
+    outline: none;
+}
+.terminos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 80%;
+    left: 15%; top: 80%;
+}
+.terminos p{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 158%;
+    color: rgba(194, 188, 188, 0.8);
+    flex: none;
+    order: 1;
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2% 0;
+    position: absolute;
+    width: 80%;
+    left: 13%; top: 82%;
+}
+.boton-encriptar{
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 0 10px;
+    width: 20%;
+    color: rgb(194, 188, 188);
+    background-color: rgb(51, 53, 53);
+    border-radius: 24px;
+    line-height: 19px;
+    text-align: center;
+    font-size: 15px;
+}
+.boton-desencriptar{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 0 10px;
+    width: 20%;
+    color: rgb(194, 188, 188);
+    background-color: rgb(51, 53, 53);
+    border-radius: 24px;
+    line-height: 19px;
+    text-align: center;
+    font-size: 15px;
+
+}
+.boton-encriptar:hover, 
+.boton-desencriptar:hover{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.03);
+    font-size: 17px;
+    cursor: pointer;
+    background-color: rgb(42, 43, 43);
+}
+.caja-reflejo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width:28%; height: 90%;
+    right: 10%; top:5%;
+    background-color:rgb(37, 39, 39) ;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+}
+.reflejo{
+    resize: none;
+    position: absolute;
+    display: flex;
+    width: 85%; height: 80%; top:4%;
+    background-color:rgb(37, 39, 39);
+    background-image: url(./img/principal.png);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    border: none;
+    font-size: 28px;
+    color: rgb(194, 188, 188);
+    
+}
+.reflejo:focus,
+.reflejo:active{
+    outline: none;
+    border: none;
+}
+.reflejo::-webkit-scrollbar{
+    display: none;
+}
+.mensaje-reflejo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%; top:60%;
+    text-align: center;
+}
+.mensaje-reflejo h2{
+    color: rgb(218, 214, 214);
+    width: 80%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+} 
+.mensaje-reflejo p{
+    color:rgb(194, 188, 188);
+    width: 80%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+.botones-caja-reflejo{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0;
+    position: absolute;
+    width: 80%;
+    bottom: 5%;
+    justify-content: center;
+}
+.boton-copiar{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 0 10px;
+    width: 30%;
+    color: rgb(194, 188, 188);
+    background-color: rgb(51, 53, 53);
+    border-radius: 24px;
+    line-height: 19px;
+    text-align: center;
+    font-size: 15px;
+}
+.boton-borrar{
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 0 10px;
+    width: 30%;
+    color: rgb(194, 188, 188);
+    background-color: rgb(51, 53, 53);
+    border-radius: 24px;
+    line-height: 19px;
+    text-align: center;
+    font-size: 15px;
+}
+.boton-copiar:hover,
+.boton-borrar:hover{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.03);
+    font-size: 17px;
+    cursor: pointer;
+    background-color: rgb(42, 43, 43);
+}
+/*footer*/
+.sidebar-footer{
+    width: 25vw; 
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    bottom: 0; left:0;
+    box-sizing: border-box;
+    padding: 20px;
+    color:rgb(194, 188, 188);
+    background-color: rgba(37, 39, 39,0.95);
+    border-radius: 10px;
+    justify-content: center;
+}
+.boton-cerrar{
+    display: none;
+    left: 90%;
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    color:rgb(194, 188, 188);
+}
+.creador-info{
+    width: 90%;
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+.creador-info h3{
+    margin: 5px;
+    padding: 5px;
+}
+.redes-sociales{
+    margin: 10px;
+    font-size: 22px;
+}
+.fa-brands{
+    color:rgb(194, 188, 188) ;
+    margin: 0 5px;
+}
+.fa-brands:visited{
+    color:rgb(90, 92, 93);
+}
+.fa-brands:hover{
+    color:rgb(140, 143, 145);
+    cursor: pointer;
+}
+.contacto{
+    margin: 10px;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.parrafo-contacto{
+    height: 10px;
+}
+.email{
+    margin: 22px;
+    color: rgb(194, 188, 188);
+    font-size: 20px;
+}
+.email:visited{
+    color:rgb(194, 188, 188);
+    text-decoration: none;
+}
+.email:hover{
+    color:rgb(140, 143, 145);
+    cursor: pointer;
+}
+.boton-abrir{
+    margin: 10px;
+    display: inline-block;
+    height: 5%;
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    left: 0; top: 50%;
+    color:rgb(194, 188, 188);
+    
+}
+.abrir-cerrar{
+    margin: 5px;
+    display: inline-block;
+    height: 5%;
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    left: 25%; top: 50%;
+    color:rgb(194, 188, 188);
+}
+.boton-abrir:hover,
+.abrir-cerrar:hover{
+    cursor: pointer;
+    color:rgb(99, 101, 102);
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.3);
+} 
+/*(responsive design*/
+@media screen and (max-width:57.7em){
+    .contenedor{
+        display: flex;
+        flex-direction: row;
+    }
+    .encriptar{
+        width: 100%;
+    }
+    .texto{
+        width: 80%;
+        height: 35%;
+        left: 10%; 
+        top: 2%;
+        font-size: 32px;
+        max-width: 75%;
+    }
+    .terminos{
+        width: 80%;left: 5%; top: 90%;
+        margin-top: 20px;
+        max-width: 80%;
+        max-height: 20%;
+    }
+    .terminos p{
+        font-size: 15px;
+        max-width: 80%;
+    }
+    .botones{
+        width: 85%; left: 7%; top: 85%;
+    }
+    .boton-encriptar,
+    .boton-desencriptar{
+        width: 48%;
+        border-radius:16px;
+    }
+    .caja-reflejo{
+        width: 88%; height: 40%; top: 44%; left:5%;
+    }
+    .mensaje-reflejo{
+        width: 100%;
+        top: 20%;
+    }
+    .mensaje-reflejo h2{
+        font-size: 20px;
+    }
+    .mensaje-reflejo p{
+        font-size: 18px;
+    }
+    .botones-caja-reflejo{
+        bottom: 0%;
+    }
+    .reflejo{
+        height: 75%;
+        background-image: none;
+    }
+    .sidebar-footer{
+        width: 80%;
+    }
+    .boton-abrir{
+        top: 25%;
+    }
+    .abrir-cerrar{
+        top: 25%;
+        left: 70%;
+    }
+}
+
+/* Personalizado del alert */
+.swa12-custom {
+    background-color: rgb(79, 81, 81) !important; /* Cambia el color de fondo del alert */
+    border-radius: 50px !important;
+}
+.swa12-title {
+    color: #000000 !important; /* Cambia el color del texto del título a negro */
+    font-size: 40px;
+    font-weight:600;
+}
+.swal2-html-container{
+    color: #000000 !important; /* Cambia el color del texto específico */
+    font-weight: bold !important;
+    font-size: 25px !important; /* Cambia el peso de la fuente si es necesario */
+}
+.swal2-icon {
+    color: #f01515 !important; /* Cambia el color del ícono de advertencia a amarillo */
+    border-color: #f01515 !important; 
+}

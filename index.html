@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador de Textos</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <div class="contenedor">
+            <div class="encriptar">
+                <!--caja de texto principal-->      
+                <textarea class="texto" id="texto" placeholder="Ingrese el texto aqui..." ></textarea>
+                <!-- terminos-->
+                <div class="terminos">
+                    <p><i class="fa-solid fa-circle-info fa-sm"></i> Solo letras minúsculas y sin acentos.</p>
+                </div>
+                <!--botones para encriptar y desencriptar-->
+                <div class="botones">
+                    <button class="boton-encriptar" type="buttom" onclick="encriptar()">Encriptar</button>
+                    <button class="boton-desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </div>
+
+            <!-- caja con el texto reflejo-->
+            <div class="caja-reflejo">
+                <!--<img src="img/principal.png" id="animado">-->
+                <textarea name="mensaje" class="reflejo" id="mensaje" readonly></textarea>
+                <div class="mensaje-reflejo" id="mensaje-encriptado"> 
+                    <h2 id="titulo-mensaje">No se ha encontrado ningún mensaje</h2>
+                    <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar...</p>
+                </div>
+                <div class="botones-caja-reflejo">
+                    <button class="boton-copiar" id="boton-copiar" onclick="copiar()" >copiar</button>
+                    <button class="boton-borrar" id="boton-borrar" onclick="borrar()">Borrar</button>
+                </div>
+            </div>
+        </div>
+        <footer class="sidebar-footer" id="sidebarFooter">
+            <div class="creador-info" id="creadorInfo">
+                <h3>Karen Pacheco</h3>
+                <div class="redes-sociales">
+                    <a href="https://www.instagram.com/vokiyami/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/vokitami" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/karenpacheco-ds/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="contacto">
+                    <p class="parrafo-contacto">contacto</p>
+                    <a href="mailto:annawe407@gmail.com" class="email" ><i class="fa-regular fa-envelope"></i></a>
+                </div>
+                <p class="copyright">&copy Copyright - 2024</p>
+            </div>
+            <a title="cerrar" href="#" class="boton-cerrar" id="cerrar" onclick="ocultar()"><i class="fa-solid fa-x"></i></a>
+        </footer>
+        <a title="abrir" href="#" class="boton-abrir" id="abrir" onclick="mostrar()"><i class="fa-solid fa-bars-staggered fa-rotate-90"></i></a>
+        <a title="cerrar" href="#" class="abrir-cerrar" id="abrirCerrar" onclick="ocultar()"><i class="fa-solid fa-bars-staggered fa-rotate-90"></i></a>
+    </body>
+</html>
